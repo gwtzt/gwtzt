@@ -17,6 +17,8 @@
 		AA0000000000000000000021 /* AirportSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000008 /* AirportSelectorView.swift */; };
 		AA0000000000000000000022 /* FlightSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000009 /* FlightSearchViewModel.swift */; };
 		AA0000000000000000000023 /* FlightPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000A /* FlightPriceService.swift */; };
+		AA0000000000000000000026 /* SerpAPIFlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000E /* SerpAPIFlightService.swift */; };
+		AA0000000000000000000027 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000F /* SettingsView.swift */; };
 		AA0000000000000000000024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000B /* Assets.xcassets */; };
 		AA0000000000000000000025 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000C /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		AA000000000000000000000A /* FlightPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightPriceService.swift; sourceTree = "<group>"; };
 		AA000000000000000000000B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA000000000000000000000C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA000000000000000000000E /* SerpAPIFlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerpAPIFlightService.swift; sourceTree = "<group>"; };
+		AA000000000000000000000F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000090 /* FlightMatrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightMatrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,7 @@
 				AA0000000000000000000006 /* SearchConfigView.swift */,
 				AA0000000000000000000007 /* PriceMatrixView.swift */,
 				AA0000000000000000000008 /* AirportSelectorView.swift */,
+				AA000000000000000000000F /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				AA000000000000000000000A /* FlightPriceService.swift */,
+				AA000000000000000000000E /* SerpAPIFlightService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 				AA0000000000000000000021 /* AirportSelectorView.swift in Sources */,
 				AA0000000000000000000022 /* FlightSearchViewModel.swift in Sources */,
 				AA0000000000000000000023 /* FlightPriceService.swift in Sources */,
+				AA0000000000000000000026 /* SerpAPIFlightService.swift in Sources */,
+				AA0000000000000000000027 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

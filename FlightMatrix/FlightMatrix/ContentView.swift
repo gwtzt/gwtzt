@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = FlightSearchViewModel()
     @State private var selectedTab = 0
+    @State private var showSettings = false
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -11,7 +12,14 @@ struct ContentView: View {
                 SearchConfigView(viewModel: viewModel)
                     .navigationTitle("Flugsuche")
                     .toolbar {
-                        ToolbarItem(placement: .primaryAction) {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button {
+                                showSettings = true
+                            } label: {
+                                Label("Einstellungen", systemImage: "gearshape")
+                            }
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
                             Button {
                                 Task {
                                     await viewModel.searchFlights()
@@ -38,7 +46,7 @@ struct ContentView: View {
                 PriceMatrixView(viewModel: viewModel)
                     .navigationTitle("Preismatrix")
                     .toolbar {
-                        if viewModel.hasSearched {
+                        if viewModel.hasSearched && !viewModel.isLoading {
                             ToolbarItem(placement: .primaryAction) {
                                 Button("Neu suchen") { selectedTab = 0 }
                             }
@@ -50,19 +58,24 @@ struct ContentView: View {
                                 Color.black.opacity(0.25).ignoresSafeArea()
                                 VStack(spacing: 14) {
                                     ProgressView().scaleEffect(1.4)
-                                    Text("Preise werden geladen…")
+                                    Text(viewModel.loadingMessage)
                                         .font(.subheadline)
                                         .fontWeight(.medium)
+                                        .multilineTextAlignment(.center)
                                 }
                                 .padding(24)
                                 .background(.regularMaterial)
                                 .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .padding(.horizontal, 32)
                             }
                         }
                     }
             }
             .tabItem { Label("Matrix", systemImage: "tablecells") }
             .tag(1)
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
         }
         .alert("Hinweis", isPresented: Binding(
             get: { viewModel.errorMessage != nil },
